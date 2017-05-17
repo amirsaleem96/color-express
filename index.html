@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang = "en-US"/>
+  <head>
+    <title>The last color website you will ever use</title>
+    <meta charset = "UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Armata" rel="stylesheet"/>
+    <script src="https://use.fontawesome.com/9d1891df0e.js"></script>
+  </head>
+  <body>
+
+
+    <header class="header header-before">
+      <h1 id = "logo">Color  <span style="color: gold;">Ex</span>press</h1>
+      <div class="value-wrapper">
+        <label for="">Total Colors: </label>
+        <input id = "no-of-colors" type="text" value = "8"/>
+        <button id = "generate" title = "you can press enter to generate random colors">Generate</button>
+      </div>
+    </header>
+
+
+
+    <div class="bar-wrapper" title = "you can use ctrl button to toggle menu">
+      <span id="bar1"></span>
+      <span id="bar2"></span>
+      <span id="bar3"></span>
+    </div>
+
+
+
+    <div class="dashboard-container hidden">
+      <h3>My saved colors: <span id="saved-count">0</span></h3>
+      <div class="dashboard">
+
+      </div>
+    </div>
+
+
+
+    <section class = "main-section clearfix">
+      <button id = "toggle-custom-color-btn">+</button>
+      <div class="custom-color-container hidden clearfix">
+        <div class="custom-color">
+          <button id="add-custom-color-btn">+</button>
+          <h4 class = "color-name">Add Custom Color</h4>
+        </div>
+      </div>
+
+      <div class="random-color-container clearfix">
+
+      </div>
+
+    </section>
+
+    <!-- CUSTOM MODAL -->
+
+    <div class="add-custom-modal-container hidden">
+      <div class="add-custom-modal clearfix">
+        <span id="close-custom-modal-btn">&times;</span>
+        <h1>Enter color</h1>
+        <input type="text" id = "custom-color-value"/>
+        <button id = "add-to-custom-list" title = "you can press esc button to close modal">Add</button>
+      </div>
+    </div>
+
+    <!-- SHADE MODAL -->
+
+    <div class="shade-modal-container hidden clearfix">
+      <div class="shade-modal clearfix">
+      <button id = "close-shade-modal" title = "you can press esc button to close modal">&times;</button>
+       <div class="color-box-container">
+         <div class="color-box">
+
+         </div>
+       </div>
+       <div class="color-details-container">
+        <div class="color-details">
+          <p id = "hex-value" class = "color-value">HEX: #CC0000</p>
+          <p id = "rgb-value" class = "color-value">RGB: rgb(0,56,243)</p>
+          <p id = "hsl-value" class = "color-value">HSL: hsl(67,45%,36%)</p>
+          <span id="save-btn"><i class="fa fa-save"></i>save</span>
+        </div>
+       </div>
+       <div class="color-shades-container">
+        <div class="color-shades clearfix">
+
+        </div>
+       </div>
+      </div>
+    </div>
+
+    <!-- ERROR MODAL -->
+    <div class="error-modal-container hidden">
+      <div class="error-modal">
+        <h1 id = "error-text">Input Field is empty</h1>
+        <button id = "close-error-btn" title = "you can press esc button to close modal">okay</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Made with <span style = "color: crimson;">&hearts;</span> from Amir Saleem</p>
+    </footer>
+
+    <script type = "text/javascript" src = "static/js/script.js"></script>
+  </body>
+</html>
