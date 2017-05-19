@@ -70,9 +70,9 @@ function toggle_body_bg(){
   var inp = document.getElementById('toggle-body-bg');
   var board = document.body;
   if(inp.checked){
-    board.style.cssText += 'background-color: black; color: black;';
+    board.style.cssText += 'background-color: black;';
   } else {
-    board.style.cssText += 'background-color: white; color: white;';
+    board.style.cssText += 'background-color: white;';
   }
 }
 
