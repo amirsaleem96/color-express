@@ -19,7 +19,7 @@ function header_scroll(num){
   if(wid > 768){
     if(pageHeight > num){
       header.className = 'header header-after';
-      bar.style.top = '5px';
+      bar.style.top = '3px';
     } else if (pageHeight <= num) {
       header.className = 'header header-before';
       bar.style.top = '10px';
@@ -55,6 +55,25 @@ function toggle_dashboard(){
     dashboard.className = 'dashboard-container hidden';
   }
 
+}
+function toggle_dashboard_bg(){
+  var inp = document.getElementById('toggle-dashboard-bg');
+  var board = document.getElementsByClassName('dashboard-container')[0];
+  if(inp.checked){
+    board.style.cssText += 'background-color: white; color: black;';
+  } else {
+    board.style.cssText += 'background-color: black; color: white;';
+  }
+}
+
+function toggle_body_bg(){
+  var inp = document.getElementById('toggle-body-bg');
+  var board = document.body;
+  if(inp.checked){
+    board.style.cssText += 'background-color: black; color: black;';
+  } else {
+    board.style.cssText += 'background-color: white; color: white;';
+  }
 }
 
 function close_dashboard(){
@@ -363,8 +382,7 @@ function save_to_my_space(color){
   var background;
   var foreground;
   var RGB;
-  parent.appendChild(elem);
-
+   parent.appendChild(elem);
   RGB = hex2rgb(color);
   var foreground = contrastForeground(RGB);
   background = color;
@@ -374,6 +392,7 @@ function save_to_my_space(color){
   saved_count();
   open_error_modal();
   document.getElementById('error-text').innerHTML = 'Saved to My Space';
+  setCookie();
 }
 // custom color addition
 
@@ -411,9 +430,10 @@ function add_custom_color(){
        } catch (e) {
          open_error_modal();
          document.getElementById('error-text').innerHTML = 'An error occured while adding a color, wrong color value';
-         color.value = ''; 
+         color.value = '';
        }
-  }
+    }
+
 }
 
 function open_custom_color_modal(){
@@ -454,6 +474,14 @@ function getEventTarget(e){
   return e.target || e.srcElement;
 }
   //---------------------Method Calls----------------- //
+bindEvent(document.getElementById('toggle-dashboard-bg'), 'change', function(){
+  toggle_dashboard_bg();
+});
+
+bindEvent(document.getElementById('toggle-body-bg'), 'change', function(){
+  toggle_body_bg();
+});
+
 bindEvent(document.getElementById('add-custom-color-btn'),'click',function(){
  open_custom_color_modal();
 });
@@ -535,6 +563,7 @@ bindEvent(document.getElementsByClassName("dashboard")[0],'click', function(e){
 function createMultiple(){
   var num = document.getElementById('no-of-colors');
   var val = num.value;
+  var intVal = Math.round(parseInt(val));
   var pattern = /\d/;
   if(val == null || val == ''){
     open_error_modal();
@@ -547,7 +576,7 @@ function createMultiple(){
     document.getElementById('error-text').innerHTML = 'Value must be a number';
   } else {
     destroy('random-color-container');
-    for(var i = 0;  i < val; i++){
+    for(var i = 0;  i < intVal; i++){
       createNewRandom();
     }
   }
@@ -572,6 +601,41 @@ bindEvent(document.body, 'keydown', function(event){
    var that = event;
    doKey(that);
 });
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var cont=getCookie("content");
+    if (cont != "") {
+        document.getElementsByClassName('dashboard')[0].innerHTML = cont;
+    } else {
+       cont = document.getElementsByClassName('dashboard')[0].innerHTML;
+       if (cont != "" && cont != null) {
+           setCookie("content", cont, 30);
+       }
+    }
+}
 
 bindEvent(window, 'load',function(){
   createMultiple();
