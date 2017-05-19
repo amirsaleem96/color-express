@@ -23,10 +23,15 @@ p {
 body {
   font-family: 'Armata', sans-serif;
   font-size: 16px;
-  background: black;
+  background: white;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
-/* line 42, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 43, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 input:focus,
 button:focus,
 textarea:focus,
@@ -34,13 +39,13 @@ select:focus {
   outline: none;
 }
 
-/* line 49, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 50, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 img {
   display: block;
   max-width: 100%;
 }
 
-/* line 54, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 55, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 div,
 header,
 footer,
@@ -50,57 +55,61 @@ article {
   position: relative;
 }
 
-/* line 64, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 65, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 70, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 71, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .block-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 76, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 77, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .block-left {
   float: left;
 }
 
-/* line 80, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 81, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .block-right {
   float: right;
 }
 
-/* line 84, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 85, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .hidden {
   display: none;
 }
 
-/* line 88, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 89, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .visible {
   display: block;
 }
 
-/* line 92, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 93, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .visually-hidden {
   opacity: 0;
 }
 
-/* line 96, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 97, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .btn-primary {
   border-radius: 8px;
 }
 
-/* line 106, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #1D1D1D;
-  z-index: 12;
+/* line 101, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-button {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 22px;
+  padding: 6px;
+  cursor: pointer;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  border: 1px solid #ccc;
   -webkit-transition: all 0.4s ease 0s;
   -moz-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
@@ -109,6 +118,61 @@ article {
 }
 
 /* line 113, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-button:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 125, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-body-bg-wrapper {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+}
+
+/* line 129, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-body-bg-wrapper #toggle-body-bg {
+  display: none;
+}
+
+/* line 132, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-body-bg-wrapper #toggle-body-bg:checked ~ #body-label[for="toggle-body-bg"] {
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* line 136, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-body-bg-wrapper #toggle-body-bg:checked ~ #body-label[for="toggle-body-bg"]:before {
+  background-color: cornflowerblue;
+  transform: translateX(38px);
+}
+
+/* line 147, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000000;
+  z-index: 12;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* line 154, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header #logo {
   display: inline-block;
   color: #FFFFFF;
@@ -120,12 +184,12 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 118, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 159, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header #logo i {
   margin: 0 5px 0 5px;
 }
 
-/* line 122, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 163, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper {
   display: inline-block;
   border: 0px solid white;
@@ -133,13 +197,13 @@ article {
   margin: 8px 0 0 40px;
 }
 
-/* line 127, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 168, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper label {
   color: white;
   font-size: 14px;
 }
 
-/* line 131, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 172, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper input,
 .header .value-wrapper button {
   border: 1px solid #4d4d4d;
@@ -150,50 +214,52 @@ article {
   border-radius: 16px;
 }
 
-/* line 140, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 181, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper input:focus {
   border: 1px solid gold;
 }
 
-/* line 143, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 184, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper button {
   cursor: pointer;
   margin-left: 5px;
 }
 
-/* line 146, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 187, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header .value-wrapper button:hover {
   background: gold;
   color: black;
 }
 
-/* line 153, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 194, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header-before {
   padding: 10px 60px;
 }
 
-/* line 155, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 196, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header-before #logo {
   font-size: 28px;
 }
 
-/* line 159, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 200, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header-after {
   padding: 5px 60px;
 }
 
-/* line 161, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 202, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .header-after #logo {
   font-size: 26px;
 }
 
-/* line 170, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 211, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .bar-wrapper {
   position: fixed;
-  right: 20px;
+  right: 45px;
   top: 10px;
-  width: 62px;
+  width: auto;
+  padding: 5px 5px 12px 5px;
   max-width: 70px;
+  background: black;
   cursor: pointer;
   z-index: 20;
   -webkit-transition: all 0.4s ease 0s;
@@ -203,7 +269,7 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 179, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 222, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .bar-wrapper #bar1,
 .bar-wrapper #bar2,
 .bar-wrapper #bar3 {
@@ -222,33 +288,76 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 192, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 235, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .bar-wrapper:hover #bar1 {
   -webkit-transform: translateX(4px);
   transform: translateX(4px);
 }
 
-/* line 196, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 239, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .bar-wrapper:hover #bar2 {
   -webkit-transform: translateX(-4px);
   transform: translateX(-4px);
 }
 
-/* line 200, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 243, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .bar-wrapper:hover #bar3 {
   -webkit-transform: translateX(4px);
   transform: translateX(4px);
 }
 
-/* line 211, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 254, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.dashboard-light {
+  background: #000;
+}
+
+/* line 257, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.dashboard-dark {
+  background: #000;
+}
+
+/* line 261, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container {
+  padding: 0 30px 0 30px;
+}
+
+/* line 263, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container input[type="checkbox"] {
+  display: none;
+}
+
+/* line 266, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container #dashboard-label {
+  float: right;
+}
+
+/* line 269, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container #toggle-dashboard-bg:checked ~ #dashboard-label[for="toggle-dashboard-bg"] {
+  background-color: white;
+}
+
+/* line 272, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container #toggle-dashboard-bg:checked ~ #dashboard-label[for="toggle-dashboard-bg"]:before {
+  background-color: cornflowerblue;
+  transform: translateX(39px);
+}
+
+/* line 276, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.toggle-btn-container #toggle-dashboard-bg:checked .dashboard-container {
+  background: white;
+}
+
+/* line 281, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .dashboard-container {
   position: fixed;
   top: 0;
   right: 0;
-  width: 25%;
+  width: 35%;
   height: 100%;
   padding: 60px 10px 10px 10px;
+  border-left: 1px solid gold;
   background: #000;
+  color: #FFF;
   z-index: 15;
   -webkit-transition: all 0.4s ease 0s;
   -moz-transition: all 0.4s ease 0s;
@@ -260,20 +369,21 @@ article {
   overflow: auto;
 }
 
-/* line 224, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 296, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .dashboard-container h3 {
-  color: white;
+  color: inherit;
   text-align: center;
   font-weight: 100;
   padding: 10px 0 20px 0;
 }
 
-/* line 231, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 303, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .dashboard-container .dashboard .saved-color {
   width: 44%;
   height: 150px;
   float: left;
-  margin: 2%;
+  margin: 3%;
+  -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-box-shadow: 2px 2px 8px #1e1e1e;
   box-shadow: 2px 2px 8px #1e1e1e;
@@ -284,7 +394,7 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 240, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 313, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .dashboard-container .dashboard .saved-color .remove-saved {
   position: absolute;
   right: 12px;
@@ -292,13 +402,13 @@ article {
   cursor: pointer;
 }
 
-/* line 249, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 322, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .dashboard-hidden {
   -webkit-transform: translateX(2000px);
   transform: translateX(2000px);
 }
 
-/* line 258, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 331, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .color-box, .main-section .custom-color-container .custom-color, .main-section .random-color-container .random-color {
   float: left;
   margin: 1%;
@@ -315,7 +425,7 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 269, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 342, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .action-icons, .color-icon {
   position: absolute;
   right: 10px;
@@ -325,12 +435,12 @@ article {
   font-size: 14px;
 }
 
-/* line 276, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 349, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .action-icons i, .color-icon i {
   margin-right: 3px;
 }
 
-/* line 283, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 356, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .color-name {
   position: relative;
   top: 50%;
@@ -340,7 +450,7 @@ article {
   font-weight: 100;
 }
 
-/* line 291, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 364, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section {
   width: 70%;
   min-height: 523px;
@@ -348,7 +458,7 @@ article {
   padding: 10px 0 30px 0;
 }
 
-/* line 296, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 369, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section #toggle-custom-color-btn {
   position: absolute;
   right: -12px;
@@ -367,19 +477,19 @@ article {
   transition: all 0.4s ease 0s;
 }
 
-/* line 309, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 382, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container {
   width: 100%;
-  border: 1px solid gold;
+  border: 1px solid #000000;
   border-radius: 8px;
 }
 
-/* line 313, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 386, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color {
   background: #ccc;
 }
 
-/* line 316, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 389, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color #add-custom-color-btn {
   position: absolute;
   right: 10px;
@@ -395,82 +505,82 @@ article {
   color: white;
 }
 
-/* line 330, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 403, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color .copy-icon,
 .main-section .custom-color-container .custom-color .details-icon {
   display: none;
 }
 
-/* line 334, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 407, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color .copy-icon {
   top: 10px;
 }
 
-/* line 337, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 410, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color .details-icon {
   top: 10px;
 }
 
-/* line 340, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 413, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .custom-color-container .custom-color:hover .copy-icon,
 .main-section .custom-color-container .custom-color:hover .details-icon {
   display: block;
 }
 
-/* line 346, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 419, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container {
   width: 100%;
   border: 0px solid crimson;
 }
 
-/* line 349, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 422, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color {
   background: black;
   color: white;
 }
 
-/* line 353, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 426, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color:nth-child(even) {
   -webkit-animation: fade-in 1 0.6s ease 0s;
   animation: fade-in 1 0.6s ease 0s;
 }
 
-/* line 357, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 430, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color:nth-child(odd) {
   -webkit-animation: fade-in 1 0.6s ease 0s;
   animation: fade-in 1 0.6s ease 0s;
 }
 
-/* line 361, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 434, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color .copy-icon,
 .main-section .random-color-container .random-color .details-icon,
 .main-section .random-color-container .random-color .save-icon {
   display: none;
 }
 
-/* line 366, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 439, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color .copy-icon {
   top: 10px;
 }
 
-/* line 369, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 442, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color .details-icon {
   top: 33px;
 }
 
-/* line 372, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 445, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color .save-icon {
   top: 54px;
 }
 
-/* line 375, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 448, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .main-section .random-color-container .random-color:hover .copy-icon,
 .main-section .random-color-container .random-color:hover .details-icon,
 .main-section .random-color-container .random-color:hover .save-icon {
   display: block;
 }
 
-/* line 388, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 461, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .add-custom-modal-container {
   position: fixed;
   width: 100%;
@@ -480,7 +590,7 @@ article {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* line 395, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 468, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .add-custom-modal-container .add-custom-modal {
   width: 70%;
   margin: 0 auto;
@@ -490,9 +600,10 @@ article {
   background: white;
   padding: 30px 30px;
   border-radius: 8px;
+  text-align: center;
 }
 
-/* line 404, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 478, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .add-custom-modal-container .add-custom-modal #close-custom-modal-btn {
   position: absolute;
   top: 10px;
@@ -501,42 +612,51 @@ article {
   font-size: 30px;
 }
 
-/* line 411, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 485, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .add-custom-modal-container .add-custom-modal h1 {
   text-align: center;
   padding: 10px 0 20px 0;
+  font-weight: 100;
 }
 
-/* line 415, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.add-custom-modal-container .add-custom-modal input,
-.add-custom-modal-container .add-custom-modal button {
+/* line 490, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.add-custom-modal-container .add-custom-modal .official-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 493, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.add-custom-modal-container .add-custom-modal .official-wrapper input[type="text"],
+.add-custom-modal-container .add-custom-modal .official-wrapper button {
   border: 1px solid #1d1d1d;
-  padding: 10px 10px;
   border-radius: 16px;
 }
 
-/* line 421, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.add-custom-modal-container .add-custom-modal input {
-  width: 75%;
+/* line 498, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.add-custom-modal-container .add-custom-modal .official-wrapper input[type="text"] {
+  width: 80%;
   float: left;
+  padding: 10px 10px;
 }
 
-/* line 425, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.add-custom-modal-container .add-custom-modal button {
-  width: 20%;
-  float: right;
+/* line 503, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.add-custom-modal-container .add-custom-modal .official-wrapper button {
+  width: 19%;
+  float: left;
+  margin-left: 1%;
+  padding: 10px 2px;
   background: black;
   color: white;
   cursor: pointer;
 }
 
-/* line 431, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.add-custom-modal-container .add-custom-modal button:hover {
+/* line 511, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.add-custom-modal-container .add-custom-modal .official-wrapper button:hover {
   background: gold;
   color: black;
 }
 
-/* line 443, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 524, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container {
   position: fixed;
   top: 0;
@@ -547,7 +667,7 @@ article {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* line 451, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 532, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container #close-shade-modal {
   position: absolute;
   right: 10px;
@@ -560,7 +680,7 @@ article {
   z-index: 10;
 }
 
-/* line 462, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 543, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal {
   width: 60%;
   height: 450px;
@@ -573,14 +693,14 @@ article {
   transform: translateY(-50%);
 }
 
-/* line 472, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 553, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-box-container {
   width: 30%;
   float: left;
   border: 0px solid black;
 }
 
-/* line 476, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 557, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-box-container .color-box, .shade-modal-container .shade-modal .color-box-container .main-section .custom-color-container .custom-color, .main-section .custom-color-container .shade-modal-container .shade-modal .color-box-container .custom-color, .shade-modal-container .shade-modal .color-box-container .main-section .random-color-container .random-color, .main-section .random-color-container .shade-modal-container .shade-modal .color-box-container .random-color {
   width: 80%;
   float: none;
@@ -589,52 +709,52 @@ article {
   background: crimson;
 }
 
-/* line 484, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 565, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-details-container {
   width: 70%;
   float: left;
   border: 0px solid black;
 }
 
-/* line 488, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 569, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-details-container .color-details {
   padding: 25px 30px 25px 10px;
 }
 
-/* line 490, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 571, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-details-container .color-details p {
   padding: 10px 0;
   color: #454545;
   border-bottom: 1px solid #c7c7c7;
 }
 
-/* line 495, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 576, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-details-container .color-details #save-btn {
   display: inline-block;
   margin-top: 10px;
   cursor: pointer;
 }
 
-/* line 499, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 580, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-details-container .color-details #save-btn i {
   margin-right: 3px;
 }
 
-/* line 505, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 586, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-shades-container {
   width: 100%;
   float: left;
   border: 0px solid black;
 }
 
-/* line 509, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 590, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-shades-container .color-shades {
   padding: 10px 30px 30px 30px;
   height: 200px;
   overflow: auto;
 }
 
-/* line 513, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 594, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-shades-container .color-shades .shades {
   width: 50%;
   height: auto;
@@ -644,14 +764,14 @@ article {
   background: black;
 }
 
-/* line 520, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 601, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-shades-container .color-shades .shades h4 {
   text-align: center;
   color: inherit;
   font-weight: 100;
 }
 
-/* line 525, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 606, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .shade-modal-container .shade-modal .color-shades-container .color-shades .shades:hover {
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
@@ -659,7 +779,7 @@ article {
   z-index: 10;
 }
 
-/* line 540, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 621, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .error-modal-container {
   position: fixed;
   width: 100%;
@@ -669,7 +789,7 @@ article {
   z-index: 100;
 }
 
-/* line 547, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 628, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .error-modal-container .error-modal {
   width: 70%;
   margin: 0 auto;
@@ -681,19 +801,20 @@ article {
   border-radius: 8px;
 }
 
-/* line 556, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 637, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .error-modal-container .error-modal h1 {
   text-align: center;
   font-size: 26px;
+  font-weight: 100;
 }
 
-/* line 560, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 642, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .error-modal-container .error-modal button {
   display: block;
-  margin: 10px auto;
+  margin: 20px auto 10px auto;
   width: 15%;
   font-size: 20px;
-  padding: 10px 20px;
+  padding: 5px 5px;
   cursor: pointer;
   background: black;
   border: 1px solid black;
@@ -701,25 +822,79 @@ article {
   border-radius: 20px;
 }
 
-/* line 571, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+/* line 653, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
 .error-modal-container .error-modal button:hover {
   background: gold;
   color: black;
 }
 
-/* line 582, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.footer {
+/* line 663, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.half {
+  width: 50%;
+  float: left;
+}
+
+/* line 667, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.main-footer {
+  background: #000;
+  padding: 30px 50px 20px 50px;
+  border-top: 3px solid gold;
+}
+
+/* line 671, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.main-footer h1 {
+  color: #FFF;
+  font-size: 22px;
+}
+
+/* line 675, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.main-footer p {
+  color: #BFBFBF;
+  padding: 20px 0 0 0;
+  font-size: 12px;
+}
+
+/* line 679, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.main-footer p a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* line 688, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.footer-credits {
   width: 100%;
   float: left;
-  background: #1D1D1D;
+  background: #080808;
   border-top: 0px solid gold;
 }
 
-/* line 587, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-.footer p {
+/* line 693, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.footer-credits p {
+  color: #737373;
+  text-align: left;
+  padding: 10px 10px 10px 50px;
+}
+
+/* line 697, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.footer-credits p a {
+  text-decoration: none;
+  color: gold;
+}
+
+/* line 702, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.footer-credits .follow-icons {
+  padding: 8px 50px 8px 0;
+  text-align: right;
+}
+
+/* line 705, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+.footer-credits .follow-icons i {
   color: white;
-  text-align: center;
-  padding: 10px 10px;
+  font-size: 22px;
+  margin-right: 10px;
 }
 
 @-webkit-keyframes right-in {
@@ -763,162 +938,180 @@ article {
 }
 
 @media (max-width: 992px) {
-  /* line 634, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 753, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .color-box, .main-section .custom-color-container .custom-color, .main-section .random-color-container .random-color {
     width: 31.3333337%;
   }
 }
 
 @media (max-width: 768px) {
-  /* line 639, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 758, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .half {
+    width: 100%;
+  }
+  /* line 762, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .footer-credits p {
+    text-align: center;
+    padding-left: 0;
+  }
+  /* line 766, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .footer-credits .follow-icons {
+    text-align: center;
+    padding-right: 0;
+  }
+  /* line 771, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .color-box, .main-section .custom-color-container .custom-color, .main-section .random-color-container .random-color {
     width: 48%;
   }
-  /* line 643, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 775, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header #logo {
     display: inline-block;
     text-align: left;
   }
-  /* line 647, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 779, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header .value-wrapper {
     margin: 8px 0 0 10px;
     text-align: center;
   }
-  /* line 650, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 782, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header .value-wrapper input {
     width: 60px;
   }
-  /* line 655, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 787, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header-before {
     padding: 10px 20px;
   }
-  /* line 658, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 790, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header-after {
     padding: 5px 20px;
   }
-  /* line 661, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 793, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .dashboard-container {
     width: 60%;
   }
-  /* line 664, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 796, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .main-section {
     width: 80%;
-    margin-top: 150px;
+    margin-top: 130px;
   }
-  /* line 669, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 801, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .add-custom-modal-container .add-custom-modal {
     width: 75%;
     padding: 30px 30px;
   }
-  /* line 672, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 804, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .add-custom-modal-container .add-custom-modal #close-custom-modal-btn {
     font-size: 25px;
   }
-  /* line 675, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 807, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .add-custom-modal-container .add-custom-modal h1 {
     text-align: center;
     font-size: 26px;
     padding: 10px 0 10px 0;
   }
-  /* line 680, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-  .add-custom-modal-container .add-custom-modal input {
+  /* line 812, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .add-custom-modal-container .add-custom-modal .official-wrapper {
+    width: 100%;
+  }
+  /* line 814, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .add-custom-modal-container .add-custom-modal .official-wrapper input {
     width: auto;
     display: block;
     float: none;
     margin: 0 auto;
     padding: 5px 10px;
   }
-  /* line 687, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
-  .add-custom-modal-container .add-custom-modal button {
+  /* line 821, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  .add-custom-modal-container .add-custom-modal .official-wrapper button {
     display: block;
     width: auto;
     padding: 5px 15px;
     margin: 10px auto 0 auto;
     float: none;
   }
-  /* line 697, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 832, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal {
     width: 80%;
   }
-  /* line 699, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 834, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal .color-box-container {
     width: 50%;
   }
-  /* line 702, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 837, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal .color-details-container {
     width: 50%;
   }
-  /* line 708, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 843, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .color-shades-container .color-shades .shades {
     width: 50%;
   }
-  /* line 715, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 850, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .error-modal-container .error-modal {
     width: 75%;
   }
-  /* line 717, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 852, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .error-modal-container .error-modal button {
     width: 100px;
   }
 }
 
 @media (max-width: 525px) {
-  /* line 726, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 861, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header #logo {
     text-align: left;
     margin-left: 12px;
   }
-  /* line 731, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 866, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header .value-wrapper input {
     width: 150px;
   }
-  /* line 736, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 871, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header-before {
     padding: 15px 5px;
   }
-  /* line 739, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 874, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .header-after {
     padding: 10px 3px;
   }
-  /* line 742, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 877, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .bar-wrapper {
     top: 16px;
   }
-  /* line 745, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 880, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .color-box, .main-section .custom-color-container .custom-color, .main-section .random-color-container .random-color {
     width: 98%;
   }
-  /* line 748, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 883, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .dashboard-container {
     width: 90%;
   }
-  /* line 752, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 887, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .error-modal-container .error-modal {
     width: 92%;
   }
-  /* line 754, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 889, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .error-modal-container .error-modal h1 {
     font-size: 24px;
   }
-  /* line 757, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 892, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .error-modal-container .error-modal button {
     width: auto;
     padding: 5px 15px;
     border-radius: 2px;
   }
-  /* line 765, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 900, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .add-custom-modal-container .add-custom-modal {
     width: 95%;
   }
-  /* line 770, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 905, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal {
     width: 90%;
   }
-  /* line 772, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 907, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal .color-box-container {
     width: 40%;
   }
-  /* line 775, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
+  /* line 910, C:/Users/Amir Saleem/Desktop/randomColors/static/scss/style.scss */
   .shade-modal-container .shade-modal .color-details-container {
     width: 60%;
   }
