@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en-US"/>
+<html lang = "en-US">
   <head>
     <title>The last color website you will ever use</title>
     <meta charset = "UTF-8"/>
@@ -10,12 +10,16 @@
   </head>
   <body>
 
+     <div class="toggle-body-bg-wrapper">
+        <input type="checkbox" id = "toggle-body-bg"/>
+        <label class = "toggle-button" id = "body-label" for="toggle-body-bg"></label>
+     </div>
 
     <header class="header header-before">
       <h1 id = "logo">Color  <span style="color: gold;">Ex</span>press</h1>
       <div class="value-wrapper">
         <label for="">Total Colors: </label>
-        <input id = "no-of-colors" type="text" value = "8"/>
+        <input id = "no-of-colors" type="text" value = "16"/>
         <button id = "generate" title = "you can press enter to generate random colors">Generate</button>
       </div>
     </header>
@@ -31,8 +35,12 @@
 
 
     <div class="dashboard-container hidden">
+      <div class="toggle-btn-container clearfix">
+        <input type="checkbox" id = "toggle-dashboard-bg"/>
+        <label class = "toggle-button" id = "dashboard-label" for="toggle-dashboard-bg"></label>
+      </div>
       <h3>My saved colors: <span id="saved-count">0</span></h3>
-      <div class="dashboard">
+      <div class="dashboard dashboard-dark">
 
       </div>
     </div>
@@ -60,8 +68,11 @@
       <div class="add-custom-modal clearfix">
         <span id="close-custom-modal-btn">&times;</span>
         <h1>Enter color</h1>
-        <input type="text" id = "custom-color-value"/>
-        <button id = "add-to-custom-list" title = "you can press esc button to close modal">Add</button>
+        <div class="official-wrapper">
+          <input type="text" id = "custom-color-value"/>
+          <!-- <input type="color"/> -->
+          <button id = "add-to-custom-list" title = "you can press esc button to close modal">Add</button>
+        </div>
       </div>
     </div>
 
@@ -100,8 +111,36 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="footer">
-      <p>Made with <span style = "color: crimson;">&hearts;</span> from Amir Saleem</p>
+    <footer class="main-footer clearfix">
+      <div class="half">
+        <h1>About</h1>
+        <p>
+          Have you ever find it difficult to select colors for your website?<br/><br/>
+          This site is designed for desginers to pick colors from randomly generated colors.
+          On this site, you can generate random colors, you can get different shades of a color generated, you can get color values in
+          HEX, RGB and HSL and you can add your own custom colors too.
+          You can also save your selected colors to my space and can refer to them later. This is the beta version of
+          site, still there are lots of improvements to be done on this site, feel free to write to us if you have any improvement suggestion.
+          <a href = "https://github.com/amirsaleem96/color-express" target = "_blank">Improve this site</a>
+        </p>
+      </div>
+      <div class="half">
+
+      </div>
+    </footer>
+    <footer class="footer-credits clearfix">
+      <div class="half">
+        <p>&lt;/ Desgined and Developed by <a href = "https://github.com/amirsaleem96" target = "_blank">Amir Saleem</a> &gt;</p>
+      </div>
+      <div class="half">
+        <div class="follow-icons">
+          <a href="https://github.com/amirsaleem96" target = "_blank"><i class="fa fa-github"></i></a>
+          <a href="https://codepen.io/amirsaleem/" target = "_blank"><i class="fa fa-codepen"></i></a>
+          <a href="https://www.linkedin.com/in/amir-saleem-389079141/" target = "_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://www.quora.com/profile/Amir-Saleem-15" target = "_blank"><i class="fa fa-quora"></i></a>
+          <a href="https://twitter.com/developer_amir" target = "_blank"><i class="fa fa-twitter"></i></a>
+        </div>
+      </div>
     </footer>
 
     <script type = "text/javascript" src = "static/js/script.js"></script>
